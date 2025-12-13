@@ -21,8 +21,9 @@ def quick_sort(a: list[T], key: Callable[[T], Any] | None = None,
     if ln <= 1:
         return a
     pivot = a[randint(0, ln - 1)]
-    left = [x for x in a if key(x) < pivot]
-    mid = [x for x in a if key(x) == pivot]
-    right = [x for x in a if key(x) > pivot]
-    return quick_sort(left) + mid + quick_sort(right)
+    left = [x for x in a if key(x) < key(pivot)]
+    mid = [x for x in a if key(x) == key(pivot)]
+    right = [x for x in a if key(x) > key(pivot)]
+    return quick_sort(left, key) + mid + quick_sort(right, key)
+
 
