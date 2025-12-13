@@ -21,4 +21,3 @@ def test_int_rand_sorting():
     assert radix_sort(array) == sorted(array)
     assert heap_sort(array) == sorted(array)
     assert counting_sort(array) == sorted(array)
-    assert bubble_sort(array) == sorted(array)

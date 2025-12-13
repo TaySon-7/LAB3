@@ -1,6 +1,6 @@
 import click
 from click_shell import shell
-from  constants import SORTS
+from src.constants import SORTS
 from src.algorithms.bucket_sort import bucket_sort
 from src.algorithms.radix_sort import radix_sort
 
