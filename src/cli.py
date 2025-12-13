@@ -12,7 +12,7 @@ from src.structures.stack import Stack
 
 stack = Stack()
 queue = Queue()
-@shell(prompt=">3 ", intro="Алгоритмический мини-пакет")
+@shell(prompt=">33 ", intro="Алгоритмический мини-пакет")
 def loop():
     pass
 
@@ -41,7 +41,7 @@ def cli_factorial(n: int, r: bool):
 @click.argument("type", nargs=1, type=click.Choice(SORTS.keys()))
 @click.argument("array", nargs=-1, type=int)
 @click.option("--buckets", nargs=1, type=int)
-def cli_sort(type: str, array, buckets: int) -> None:
+def cli_sort(type: str, array: list, buckets: int) -> None:
     if type == "bucket_sort":
         print(*bucket_sort(array, buckets))
         return

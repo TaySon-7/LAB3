@@ -21,3 +21,48 @@ def test_int_rand_sorting():
     assert radix_sort(array) == sorted(array)
     assert heap_sort(array) == sorted(array)
     assert counting_sort(array) == sorted(array)
+
+
+def test_float_rand_sorting():
+    n = random.randint(1, 1000)
+    array = rand_float_array(n, 1, 1000)
+    assert quick_sort(array) == sorted(array)
+    assert bubble_sort(array) == sorted(array)
+    assert heap_sort(array) == sorted(array)
+
+
+def test_float_bucket_sorting():
+    n = random.randint(1, 1000)
+    array = rand_float_array(n, 0.0, 1.0)
+    assert bucket_sort(array) == sorted(array)
+
+
+def test_nearly_sorting():
+    n = random.randint(1, 1000)
+    sw = random.randint(1, n)
+    array = nearly_sorted(n, sw)
+    assert quick_sort(array) == sorted(array)
+    assert bubble_sort(array) == sorted(array)
+    assert radix_sort(array) == sorted(array)
+    assert heap_sort(array) == sorted(array)
+    assert counting_sort(array) == sorted(array)
+
+
+def test_reverse_sorting():
+    n = random.randint(1, 1000)
+    array = reverse_sorted(n)
+    assert quick_sort(array) == sorted(array)
+    assert bubble_sort(array) == sorted(array)
+    assert radix_sort(array) == sorted(array)
+    assert heap_sort(array) == sorted(array)
+    assert counting_sort(array) == sorted(array)
+
+
+def test_duplicates_sorting():
+    n = random.randint(1, 1000)
+    array = many_duplicates(n)
+    assert quick_sort(array) == sorted(array)
+    assert bubble_sort(array) == sorted(array)
+    assert radix_sort(array) == sorted(array)
+    assert heap_sort(array) == sorted(array)
+    assert counting_sort(array) == sorted(array)

@@ -16,6 +16,8 @@ def bucket_sort(a: list[float], buckets: int | None=None) -> list[float]:
         buckets = [[] for _ in range(n)]
     for num in a:
         bucket_idx = int(num * n)
+        if bucket_idx == n:
+            bucket_idx -= 1
         buckets[bucket_idx].append(num)
 
     for i in range(len(buckets)):
